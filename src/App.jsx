@@ -1,6 +1,7 @@
 import React from "react";
 import { ManageData } from "./components/ManageData";
 import ManageListData from "./components/ManageListData";
+import { ConditionalRender } from "./components/ConditionalRender";
 
 export const App = () => {
   return (
@@ -10,6 +11,7 @@ export const App = () => {
       <img src="/skate.jpg" alt="" />
       <ManageData />
       <ManageListData />
+      <ConditionalRender />
     </>
   );
 };
