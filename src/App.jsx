@@ -1,16 +1,15 @@
-import "./app.css";
-import { FirstComponent } from "./components/FirstComponent";
-import { TemplateExpressions } from "./components/TemplateExpressions";
-import { Events } from "./components/Events";
+import React from "react";
+import { ManageData } from "./components/ManageData";
+import ManageListData from "./components/ManageListData";
 
 export const App = () => {
   return (
     <>
-      <h1>Olá mundo</h1>
-      <p className="paragraph">Lets React!</p>
-      <FirstComponent />
-      <TemplateExpressions />
-      <Events />
+      <h1>Avançando com React</h1>
+      <p>Imagens Públicas</p>
+      <img src="/skate.jpg" alt="" />
+      <ManageData />
+      <ManageListData />
     </>
   );
 };
