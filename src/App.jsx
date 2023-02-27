@@ -5,6 +5,9 @@ import { ConditionalRender } from "./components/ConditionalRender";
 import { PropsDestructuring } from "./components/PropsDestructuring";
 import { Container } from "./components/Container";
 import { FunctionByChild } from "./components/FunctionByChild";
+import { Message } from "./components/Message";
+import { useState } from "react";
+import { HandleMessage } from "./components/HandleMessage";
 
 export const App = () => {
   const data = [
@@ -20,6 +23,12 @@ export const App = () => {
     { nome: "Aline", idade: 23, profissao: "Developer" },
     { nome: "Anna", idade: 27, profissao: "Developer" },
   ];
+
+  const [message, setMessage] = useState("");
+
+  const handleChange = (msg) => {
+    setMessage(msg);
+  };
 
   const showLog = () => {
     console.log("Im showing myself!");
@@ -45,6 +54,8 @@ export const App = () => {
         <p>Im a children</p>
       </Container>
       <FunctionByChild parentFunction={showLog} />
+      <Message msg={message} />
+      <HandleMessage handleMessage={handleChange} />
     </>
   );
 };
