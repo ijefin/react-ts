@@ -3,6 +3,8 @@ import { ManageData } from "./components/ManageData";
 import ManageListData from "./components/ManageListData";
 import { ConditionalRender } from "./components/ConditionalRender";
 import { PropsDestructuring } from "./components/PropsDestructuring";
+import { Container } from "./components/Container";
+import { FunctionByChild } from "./components/FunctionByChild";
 
 export const App = () => {
   const data = [
@@ -18,6 +20,10 @@ export const App = () => {
     { nome: "Aline", idade: 23, profissao: "Developer" },
     { nome: "Anna", idade: 27, profissao: "Developer" },
   ];
+
+  const showLog = () => {
+    console.log("Im showing myself!");
+  };
 
   return (
     <>
@@ -35,7 +41,10 @@ export const App = () => {
           profissao={item.profissao}
         />
       ))}
-      <PropsDestructuring nome="Jefferson" idade={23} cpf="11291152423" />
+      <Container value={1}>
+        <p>Im a children</p>
+      </Container>
+      <FunctionByChild parentFunction={showLog} />
     </>
   );
 };
