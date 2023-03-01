@@ -2,7 +2,7 @@ import React from "react";
 import { ManageData } from "./components/ManageData";
 import ManageListData from "./components/ManageListData";
 import { ConditionalRender } from "./components/ConditionalRender";
-import { PropsComponent } from "./components/PropsComponent";
+import { PropsDestructuring } from "./components/PropsDestructuring";
 
 export const App = () => {
   return (
@@ -13,7 +13,10 @@ export const App = () => {
       <ManageData />
       <ManageListData />
       <ConditionalRender />
-      <PropsComponent name="Jeff" />
+      <PropsDestructuring nome="Jefferson" idade={23} cpf="11291152423" />
+      <PropsDestructuring nome="Jefferson" idade={23} cpf="11291152423" />
+      <PropsDestructuring nome="Jefferson" idade={23} cpf="11291152423" />
+      <PropsDestructuring nome="Jefferson" idade={23} cpf="11291152423" />
     </>
   );
 };

@@ -9,4 +9,3 @@ export const PropsComponent = (props) => {
 };
 
 export default PropsComponent;
-
