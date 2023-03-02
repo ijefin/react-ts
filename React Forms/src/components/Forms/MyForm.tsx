@@ -1,23 +1,23 @@
+import { useState } from "react";
 import "./MyForm.css"
 
 export const MyForm = () => {
+
+  const [data, setData] = useState("")
+
+  const handleData = (e: any) => {
+    setData(e.target.value)
+  }
+
   return (
     <>
-      {/* <form>
-        <h1>Working with Forms!</h1>
-        <div className="form-component">
-          <label htmlFor="name">Name: </label>
-          <input placeholder="Your name here" type="text" id="name" />
-        </div>
-        <input type="submit" value={"Send"} />
-      </form> */}
-
       <form >
         <label>
           <span>Email:</span>
-          <input type="email" />
+          <input onChange={handleData} type="email" />
+          <h1>{data}</h1>
           <span>Password:</span>
-          <input type="password" />
+          <input type="password" value={data} />
         </label>
         <input type="submit" value="Send" />
       </form>
