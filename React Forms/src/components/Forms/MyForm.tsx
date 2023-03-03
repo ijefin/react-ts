@@ -9,6 +9,8 @@ export const MyForm = () => {
   //   setData(e.target.value)
   // }
 
+  console.log('data :>> ', data);
+
   return (
     <>
       <form >
