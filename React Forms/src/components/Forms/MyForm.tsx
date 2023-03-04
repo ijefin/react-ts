@@ -19,6 +19,9 @@ export const MyForm = ({ user }: any) => {
     }, 5000)
   }
 
+  console.log(email);
+  console.log(pass);
+
   return (
     <>
       <form >
