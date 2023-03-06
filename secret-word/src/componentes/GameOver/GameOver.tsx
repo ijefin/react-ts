@@ -1,8 +1,11 @@
 import "./GameOver.css"
 
-const GameOver = () => {
+const GameOver = ({ handleInit }: any) => {
     return (
-        <div>GameOver</div>
+        <>
+            <h1>GameOver</h1>
+            <button onClick={handleInit}>Menu</button>
+        </>
     )
 }
 

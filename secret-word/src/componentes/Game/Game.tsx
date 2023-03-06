@@ -1,7 +1,10 @@
 import "./Game.css"
 
-export const Game = () => {
+export const Game = ({ handleFinish }: any) => {
     return (
-        <div>Game</div>
+        <>
+            <h1>Game</h1>
+            <button onClick={handleFinish}>Finalizar Jogo</button>
+        </>
     )
 }
