@@ -21,8 +21,6 @@ export const App = () => {
   const [gameStage, setgameStage] = useState(stages[0].name)
   const [word, setWord] = useState(words)
 
-  console.log(word.carro[1])
-
   const handlePlay = () => {
     setgameStage(stages[1].name)
   }

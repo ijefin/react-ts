@@ -8,7 +8,7 @@ export const StartScreen = ({ set }: any) => {
                 <h1>Secret Word!</h1>
                 <p>Excelente didática para fortalecer seu vocabulário e também a memória.</p>
                 <p>Clique no botão para jogar!</p>
-                <Button handleFunc={set} />
+                <Button text="Iniciar" handleFunc={set} />
             </div>
         </>
     )

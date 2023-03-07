@@ -1,7 +1,7 @@
-export const Button = ({ handleFunc }: any) => {
+export const Button = ({ handleFunc, text }: any) => {
     return (
         <>
-            <button onClick={handleFunc} className="play">Iniciar</button>
+            <button onClick={handleFunc} className="play">{text}</button>
         </>
     )
 }
