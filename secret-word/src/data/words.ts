@@ -1,5 +1,14 @@
 export const words = {
-  carro: ["Motor", "Porta", "Capo", "Pneu", "Janela"],
+  carro: [
+    "Motor",
+    "Porta",
+    "Capo",
+    "Pneu",
+    "Janela",
+    "Rodas",
+    "Pastilha",
+    "Acelerador",
+  ],
   fruta: ["Maçã", "Pera", "Goiaba", "Pessego", "Abacaxi"],
   corpo: ["Mão", "Braço", "Perna", "Canela", "Testa"],
   computador: ["Processador", "Teclado", "Monitor", "Cooler", "Gabinete"],

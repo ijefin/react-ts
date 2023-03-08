@@ -20,6 +20,25 @@ export const App = () => {
 
   const [gameStage, setgameStage] = useState(stages[0].name)
   const [word, setWord] = useState(words)
+  const [pickedLetters, setPickedLetters] = useState("")
+  const [pickedCategory, setPickedCategory] = useState("")
+  const [letters, setLetters] = useState([])
+
+  const pickWordAndCategory = () => {
+    const categories = Object.keys(word)
+    const category = Math.floor(Math.random() * categories.length)
+    const listOfWords = Object.values(word)
+    console.log(listOfWords)
+    console.log(listOfWords[Math.floor(Math.random() * listOfWords.length)])
+
+    setPickedCategory(categories[category])
+  }
+
+  const startGame = () => {
+
+
+    setgameStage(stages[1].name)
+  }
 
   const handlePlay = () => {
     setgameStage(stages[1].name)
@@ -38,6 +57,7 @@ export const App = () => {
       {gameStage === "menu" && < StartScreen set={handlePlay} />}
       {gameStage === "playing" && < Game handleFinish={handleFinish} />}
       {gameStage === "end" && < GameOver handleInit={handleInit} />}
+      <button onClick={pickWordAndCategory}>teste</button>
     </div>
   )
 }
