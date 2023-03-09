@@ -2,6 +2,7 @@ import React from "react";
 import { ManageData } from "./components/ManageData";
 import ManageListData from "./components/ManageListData";
 import { ConditionalRender } from "./components/ConditionalRender";
+import { PropsComponent } from "./components/PropsComponent";
 
 export const App = () => {
   return (
@@ -12,6 +13,7 @@ export const App = () => {
       <ManageData />
       <ManageListData />
       <ConditionalRender />
+      <PropsComponent name="Jeff" />
     </>
   );
 };
