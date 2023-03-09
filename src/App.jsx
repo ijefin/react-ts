@@ -8,6 +8,8 @@ import { FunctionByChild } from "./components/FunctionByChild";
 import { Message } from "./components/Message";
 import { useState } from "react";
 import { HandleMessage } from "./components/HandleMessage";
+import { StateLift } from "./components/StateLift";
+import { LiftChange } from "./components/LiftChange";
 
 export const App = () => {
   const data = [
@@ -56,6 +58,8 @@ export const App = () => {
       <FunctionByChild parentFunction={showLog} />
       <Message msg={message} />
       <HandleMessage handleMessage={handleChange} />
+      <StateLift messageToShow={message} />
+      <LiftChange showFunc={handleChange} />
     </>
   );
 };
