@@ -10,6 +10,7 @@ import { useState } from "react";
 import { HandleMessage } from "./components/HandleMessage";
 import { StateLift } from "./components/StateLift";
 import { LiftChange } from "./components/LiftChange";
+import { UserDetails } from "./components/UserDetails";
 
 export const App = () => {
   const data = [
@@ -60,6 +61,7 @@ export const App = () => {
       <HandleMessage handleMessage={handleChange} />
       <StateLift messageToShow={message} />
       <LiftChange showFunc={handleChange} />
+      <UserDetails />
     </>
   );
 };
