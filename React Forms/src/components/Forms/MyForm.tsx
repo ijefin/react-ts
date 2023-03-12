@@ -5,6 +5,7 @@ export const MyForm = ({ user }: any) => {
 
   const [email, setData] = useState(user ? user.email : "")
   const [pass, setPass] = useState(user ? user.pass : "")
+  const [role, setRole] = useState("")
   const [message, setMessage] = useState("")
 
   const handleSubmit = (e: any) => {
@@ -21,6 +22,7 @@ export const MyForm = ({ user }: any) => {
 
   console.log(email);
   console.log(pass);
+  console.log(role);
 
   return (
     <>
@@ -28,10 +30,21 @@ export const MyForm = ({ user }: any) => {
         <label>
           <h1 style={{ color: "green" }}>{message}</h1>
           <span>Email:</span>
-          <input onChange={(e) => setData(e.target.value)} type="email" value={email} />
+          <input name="email" onChange={(e) => setData(e.target.value)} type="email" value={email} />
           <span>Password:</span>
-          <input type="password" onChange={(e) => setPass(e.target.value)} value={pass} />
+          <input name="pass" type="password" onChange={(e) => setPass(e.target.value)} value={pass} />
         </label>
+
+        <label>
+          <span>Select one function</span>
+          <select name="role" onChange={(e) => setRole(e.target.value)}>
+            <option value="admin">Admin</option>
+            <option value="leader">Leader</option>
+            <option value="technician">technician</option>
+          </select>
+
+        </label>
+
         <input type="submit" onClick={handleSubmit} value="Send" />
       </form>
     </>
