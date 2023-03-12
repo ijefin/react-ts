@@ -42,7 +42,6 @@ export const MyForm = ({ user }: any) => {
             <option value="leader">Leader</option>
             <option value="technician">technician</option>
           </select>
-
         </label>
 
         <input type="submit" onClick={handleSubmit} value="Send" />
