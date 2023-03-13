@@ -4,7 +4,7 @@ import { MyForm } from "./components/Forms/MyForm"
 export const App = () => {
   return (
     <>
-      <MyForm />
+      <MyForm user={{ email: "Jeff", pass: "Saw50812@" }} />
     </>
   )
 }

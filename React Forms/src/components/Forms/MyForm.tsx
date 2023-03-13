@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./MyForm.css"
 
-export const MyForm = () => {
+export const MyForm = ({ user }: any) => {
 
-  const [email, setData] = useState("")
-  const [pass, setPass] = useState("")
+  const [email, setData] = useState(user ? user.email : "")
+  const [pass, setPass] = useState(user ? user.pass : "")
   const [message, setMessage] = useState("")
 
   const handleSubmit = (e: any) => {
@@ -25,9 +25,9 @@ export const MyForm = () => {
         <label>
           <h1 style={{ color: "green" }}>{message}</h1>
           <span>Email:</span>
-          <input onChange={(e) => setData(e.target.value)} type="email" />
+          <input onChange={(e) => setData(e.target.value)} type="email" value={email} />
           <span>Password:</span>
-          <input type="password" onChange={(e) => setPass(e.target.value)} />
+          <input type="password" onChange={(e) => setPass(e.target.value)} value={pass} />
         </label>
         <input type="submit" onClick={handleSubmit} value="Send" />
       </form>
