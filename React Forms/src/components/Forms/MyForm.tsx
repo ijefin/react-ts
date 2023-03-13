@@ -9,19 +9,23 @@ export const MyForm = () => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault()
-    
+
     setTimeout(() => {
-      setMessage("Formulário enviado com sucesso!")
-    }, 2000);
+      setMessage(("Formulário enviado com sucesso!"))
+    }, 2000)
+
+    setTimeout(() => {
+      setMessage((""))
+    }, 5000)
   }
 
   return (
     <>
       <form >
         <label>
+          <h1 style={{ color: "green" }}>{message}</h1>
           <span>Email:</span>
           <input onChange={(e) => setData(e.target.value)} type="email" />
-          <h1>{message}</h1>
           <span>Password:</span>
           <input type="password" onChange={(e) => setPass(e.target.value)} />
         </label>
