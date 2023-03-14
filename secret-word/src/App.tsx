@@ -1,34 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import "./App.css"
+import { StartScreen } from "./componentes/StartScreen/StartScreen"
+import { useCallback, useState } from "react"
+import { words } from "./data/words.js"
 
-function App() {
-  const [count, setCount] = useState(0)
+export const App = () => {
+
+  interface stage {
+    id: number
+    name: string
+  }
+
+  const stages: Array<stage> = [
+    { id: 1, name: "menu" },
+    { id: 2, name: "playing" },
+    { id: 3, name: "end" },
+  ]
+
+  const [gameStage, setgameStage] = useState(stages[0].name)
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <div className="app">
+      {gameStage === "menu" && < StartScreen />}
+      {/* {gameStage === "playing" && < StartScreen />}
+      {gameStage === "end" && < StartScreen />} */}
     </div>
   )
 }
-
-export default App
