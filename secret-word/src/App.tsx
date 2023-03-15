@@ -26,10 +26,11 @@ export const App = () => {
 
   const pickWordAndCategory = () => {
     const categories = Object.keys(word)
+    console.log("categories", categories)
     const category = Math.floor(Math.random() * categories.length)
-    const listOfWords = Object.values(word)
-    console.log(listOfWords)
-    console.log(listOfWords[Math.floor(Math.random() * listOfWords.length)])
+
+    const listWordsByCategory = Object.values(word)[category]
+    const listwords = listWordsByCategory[Math.floor(Math.random() * listWordsByCategory.length)]
 
     setPickedCategory(categories[category])
   }
