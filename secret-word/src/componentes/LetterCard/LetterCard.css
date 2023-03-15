@@ -1,0 +1,23 @@
+.card-letter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid rgb(255, 255, 255);
+  margin: -1.2px;
+  padding: 50px 50px;
+}
+
+@media screen and (max-width: 600px) {
+  .card-letter {
+    border: 3px solid rgb(255, 255, 255);
+    padding: 8px;
+    height: 60px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card-letter {
+    border: 3px solid rgb(255, 255, 255);
+    padding: 14px;
+  }
+}

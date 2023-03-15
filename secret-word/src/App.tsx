@@ -4,6 +4,7 @@ import { useCallback, useState } from "react"
 import { wordsList } from "./data/words.js"
 import { Game } from "./componentes/Game/Game"
 import GameOver from "./componentes/GameOver/GameOver"
+import { LetterCard } from "./componentes/LetterCard/LetterCard"
 
 export const App = () => {
 
@@ -20,7 +21,7 @@ export const App = () => {
 
   const [gameStage, setgameStage] = useState(stages[0].name)
   const [word, setWord] = useState(wordsList)
-  const [pickedLetters, setPickedLetters] = useState("")
+  const [pickedLetters, setPickedLetters] = useState([])
   const [pickedCategory, setPickedCategory] = useState("")
   const [letters, setLetters] = useState([])
 
@@ -34,9 +35,11 @@ export const App = () => {
     const randomWord = word[category][Math.floor(Math.random() * word[category].length)].toLowerCase()
     const pickWordLetters = randomWord.split("")
     setPickedCategory(category)
+    setPickedLetters(pickWordLetters)
 
     console.log(pickWordLetters)
   }
+
 
   const startGame = () => {
 
@@ -58,10 +61,21 @@ export const App = () => {
 
   return (
     <div className="app">
-      {gameStage === "menu" && < StartScreen set={handlePlay} />}
-      {gameStage === "playing" && < Game handleFinish={handleFinish} />}
-      {gameStage === "end" && < GameOver handleInit={handleInit} />}
-      <button onClick={pickWordAndCategory}>teste</button>
+      {/* {gameStage === "menu" && < StartScreen set={handlePlay} />}
+      {gameStage === "playing" && < Game secretWord={pickedLetters} handleFinish={handleFinish} />}
+      {gameStage === "end" && < GameOver handleInit={handleInit} />} */}
+      <LetterCard letter="P" />
+      <LetterCard letter="ê" />
+      <LetterCard letter="s" />
+      <LetterCard letter="s" />
+      <LetterCard letter="e" />
+      <LetterCard letter="g" />
+      <LetterCard letter="o" />
+      <LetterCard letter="o" />
+      <LetterCard letter="o" />
+      <LetterCard letter="o" />
+      <LetterCard letter="o" />
+      {/* <button onClick={pickWordAndCategory}>teste</button> */}
     </div>
   )
 }
