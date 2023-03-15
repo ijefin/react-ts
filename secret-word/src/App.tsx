@@ -66,15 +66,14 @@ export const App = () => {
       {gameStage === "end" && < GameOver handleInit={handleInit} />} */}
       <LetterCard letter="P" />
       <LetterCard letter="ê" />
-      <LetterCard letter="s" />
-      <LetterCard letter="s" />
-      <LetterCard letter="e" />
-      <LetterCard letter="g" />
-      <LetterCard letter="o" />
-      <LetterCard letter="o" />
-      <LetterCard letter="o" />
-      <LetterCard letter="o" />
-      <LetterCard letter="o" />
+      <LetterCard letter="ê" />
+      <LetterCard letter="ê" />
+      <LetterCard letter="ê" />
+      <LetterCard letter="ê" />
+      <LetterCard letter="ê" />
+      <LetterCard letter="ê" />
+      <LetterCard letter="ê" />
+
       {/* <button onClick={pickWordAndCategory}>teste</button> */}
     </div>
   )

@@ -9,7 +9,7 @@ export const LetterCard = ({ letter }: letters) => {
     return (
         <>
             <div className="card-letter">
-                <span>P</span>
+                <p>{letter}</p>
             </div>
         </>
     )
