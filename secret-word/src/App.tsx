@@ -1,7 +1,7 @@
 import "./App.css"
 import { StartScreen } from "./componentes/StartScreen/StartScreen"
 import { useCallback, useState } from "react"
-import { words } from "./data/words.js"
+import { wordsList } from "./data/words.js"
 import { Game } from "./componentes/Game/Game"
 import GameOver from "./componentes/GameOver/GameOver"
 
@@ -19,20 +19,21 @@ export const App = () => {
   ]
 
   const [gameStage, setgameStage] = useState(stages[0].name)
-  const [word, setWord] = useState(words)
+  const [word, setWord] = useState(wordsList)
   const [pickedLetters, setPickedLetters] = useState("")
   const [pickedCategory, setPickedCategory] = useState("")
   const [letters, setLetters] = useState([])
 
   const pickWordAndCategory = () => {
-    const categories = Object.keys(word)
-    console.log("categories", categories)
-    const category = Math.floor(Math.random() * categories.length)
 
-    const listWordsByCategory = Object.values(word)[category]
-    const listwords = listWordsByCategory[Math.floor(Math.random() * listWordsByCategory.length)]
+    //pick a random category
+    const categories = Object.keys(wordsList)
+    const category = categories[Math.floor(Math.random() * categories.length)]
 
-    setPickedCategory(categories[category])
+    //pick a random word
+    const randomWord = word[category][Math.floor(Math.random() * word[category].length)]
+    setPickedCategory(category)
+    console.log(`${category}: ${randomWord}`)
   }
 
   const startGame = () => {
