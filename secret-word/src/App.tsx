@@ -31,9 +31,11 @@ export const App = () => {
     const category = categories[Math.floor(Math.random() * categories.length)]
 
     //pick a random word
-    const randomWord = word[category][Math.floor(Math.random() * word[category].length)]
+    const randomWord = word[category][Math.floor(Math.random() * word[category].length)].toLowerCase()
+    const pickWordLetters = randomWord.split("")
     setPickedCategory(category)
-    console.log(`${category}: ${randomWord}`)
+
+    console.log(pickWordLetters)
   }
 
   const startGame = () => {
