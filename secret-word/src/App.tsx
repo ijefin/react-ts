@@ -63,7 +63,7 @@ export const App = () => {
 
   return (
     <div className="app">
-      {gameStage === "menu" && < StartScreen set={handlePlay} />}
+      {gameStage === "menu" && < StartScreen set={startGame} />}
       <div className="game">
         {gameStage === "playing" && < Game tip={pickedCategory} secretWord={pickedLetters} handleFinish={handleFinish} />}
       </div>
@@ -71,7 +71,6 @@ export const App = () => {
         {gameStage === "end" && < GameOver handleInit={handleInit} />}
       </div>
 
-      {/* <button onClick={startGame}>teste</button> */}
     </div>
   )
 }
