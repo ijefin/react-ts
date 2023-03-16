@@ -33,15 +33,18 @@ export const App = () => {
 
     //pick a random word
     const randomWord = word[category][Math.floor(Math.random() * word[category].length)].toLowerCase()
-    const pickWordLetters = randomWord.split("")
+    const pickedWordLetters = randomWord.split("")
+    setWord(randomWord)
     setPickedCategory(category)
-    setPickedLetters(pickWordLetters)
+    setPickedLetters(pickedWordLetters)
 
-    console.log(pickWordLetters)
+    return { category, randomWord, pickedWordLetters }
   }
 
 
   const startGame = () => {
+    const { category, randomWord, pickedWordLetters } = pickWordAndCategory()
+    console.log(category, randomWord, pickedWordLetters)
 
 
     setgameStage(stages[1].name)
@@ -69,7 +72,7 @@ export const App = () => {
         {gameStage === "end" && < GameOver handleInit={handleInit} />}
       </div>
 
-      <button onClick={pickWordAndCategory}>teste</button>
+      <button onClick={startGame}>teste</button>
     </div>
   )
 }
