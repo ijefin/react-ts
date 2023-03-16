@@ -1,3 +1,5 @@
+import "./Button.css"
+
 export const Button = ({ handleFunc, text }: any) => {
     return (
         <>

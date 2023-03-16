@@ -34,7 +34,7 @@ export const wordsList = {
     "Teclado",
     "Mouse",
     "Fonte",
-    "Memória RAM",
+    "Memória",
     "HD",
     "SSD",
     "Cooler",

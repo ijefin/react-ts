@@ -61,20 +61,15 @@ export const App = () => {
 
   return (
     <div className="app">
-      {/* {gameStage === "menu" && < StartScreen set={handlePlay} />}
-      {gameStage === "playing" && < Game secretWord={pickedLetters} handleFinish={handleFinish} />}
-      {gameStage === "end" && < GameOver handleInit={handleInit} />} */}
-      <LetterCard letter="P" />
-      <LetterCard letter="ê" />
-      <LetterCard letter="ê" />
-      <LetterCard letter="ê" />
-      <LetterCard letter="ê" />
-      <LetterCard letter="ê" />
-      <LetterCard letter="ê" />
-      <LetterCard letter="ê" />
-      <LetterCard letter="ê" />
+      {gameStage === "menu" && < StartScreen set={handlePlay} />}
+      <div className="game">
+        {gameStage === "playing" && < Game secretWord={pickedLetters} handleFinish={handleFinish} />}
+      </div>
+      <div className="finish">
+        {gameStage === "end" && < GameOver handleInit={handleInit} />}
+      </div>
 
-      {/* <button onClick={pickWordAndCategory}>teste</button> */}
+      <button onClick={pickWordAndCategory}>teste</button>
     </div>
   )
 }
