@@ -1,16 +1,14 @@
-import React from 'react'
 import "./LetterCard.css"
 
 interface letters {
-    letter: string
-    show: string
+    letter: any
 }
 
-export const LetterCard = ({ letter, show }: letters) => {
+export const LetterCard = ({ letter }: letters) => {
     return (
         <>
             <div className="card-letter">
-                <p style={{ display: `${show}` }}>{letter}</p>
+                <p>{letter}</p>
             </div>
         </>
     )

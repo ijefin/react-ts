@@ -43,7 +43,7 @@ export const App = () => {
 
   const startGame = () => {
     const { category, randomWord, pickedWordLetters } = pickWordAndCategory()
-    console.log(category, randomWord, pickedWordLetters)
+    console.log(pickedWordLetters)
 
 
     setgameStage(stages[1].name)
