@@ -12,8 +12,8 @@ export const Game = ({ secretWord, handleFinish, tip }: any) => {
                 <h1>Adivinhe a palavra!</h1>
                 <h3>Dica: {tip}</h3>
                 {secretWord.map((item: string) => (
-                    <div style={{ display: "inline-grid" }}>
-                        <LetterCard letter={item} />
+                    <div style={{ display: "inline-flex" }}>
+                        <LetterCard show={"flex"} letter={item} />
                     </div>
                 ))}
                 <form>

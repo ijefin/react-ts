@@ -70,7 +70,6 @@ export const App = () => {
       <div className="finish">
         {gameStage === "end" && < GameOver handleInit={handleInit} />}
       </div>
-
     </div>
   )
 }
