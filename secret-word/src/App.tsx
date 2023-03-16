@@ -34,7 +34,6 @@ export const App = () => {
     //pick a random word
     const randomWord = word[category][Math.floor(Math.random() * word[category].length)].toLowerCase()
     const pickedWordLetters = randomWord.split("")
-    setWord(randomWord)
     setPickedCategory(category)
     setPickedLetters(pickedWordLetters)
 
@@ -66,13 +65,13 @@ export const App = () => {
     <div className="app">
       {gameStage === "menu" && < StartScreen set={handlePlay} />}
       <div className="game">
-        {gameStage === "playing" && < Game secretWord={pickedLetters} handleFinish={handleFinish} />}
+        {gameStage === "playing" && < Game tip={pickedCategory} secretWord={pickedLetters} handleFinish={handleFinish} />}
       </div>
       <div className="finish">
         {gameStage === "end" && < GameOver handleInit={handleInit} />}
       </div>
 
-      <button onClick={startGame}>teste</button>
+      {/* <button onClick={startGame}>teste</button> */}
     </div>
   )
 }

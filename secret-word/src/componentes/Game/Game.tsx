@@ -2,7 +2,7 @@ import { Button } from "../Button/Button"
 import { LetterCard } from "../LetterCard/LetterCard"
 import "./Game.css"
 
-export const Game = ({ secretWord, handleFinish }: any) => {
+export const Game = ({ secretWord, handleFinish, tip }: any) => {
     return (
         <>
             <div className="main-title">
@@ -10,16 +10,16 @@ export const Game = ({ secretWord, handleFinish }: any) => {
                     <span>Pontuação: { }</span>
                 </p>
                 <h1>Adivinhe a palavra!</h1>
-                <h3>Dica: { }</h3>
+                <h3>Dica: {tip}</h3>
                 {secretWord.map((item: string) => (
                     <div style={{ display: "inline-grid" }}>
                         <LetterCard letter={item} />
                     </div>
                 ))}
-                <form action="">
+                <form>
                     <label>
-                        <input type="text" />
-                        <button>Jogar</button>
+                        <input className="game-input" type="text" maxLength={1} />
+                        <button className="game-handler" type="submit">OK</button>
                     </label>
                 </form>
                 <div className="wrong-letters">
