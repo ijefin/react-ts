@@ -30,13 +30,10 @@ function App() {
 
     //pick a random word
     const words = Object.values(allWordsList)
-    const randomWord = words[category][Math.floor(Math.random() * words.length)]
+    const randomWord = words[category][Math.floor(Math.random() * words.length)].toLowerCase()
 
-    console.log(`${randomCategory}: ${randomWord}`)
     return { randomCategory, randomWord }
   }
-
-  pickWordAndCategory()
 
   const handleMenuScreen = () => {
     setGameStage(stages[0].name)
@@ -44,6 +41,13 @@ function App() {
 
   //Starts the game
   const startGame = () => {
+    const { randomCategory, randomWord } = pickWordAndCategory()
+
+    const listOfLetters = randomWord.split("")
+
+    console.log(randomCategory, randomWord, listOfLetters)
+
+
     setGameStage(stages[1].name)
   }
 
