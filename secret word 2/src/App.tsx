@@ -17,7 +17,26 @@ function App() {
 
   const [gameStage, setGameStage] = useState(stages[0].name)
   const [word, setWords] = useState(allWordsList)
-  console.log(word)
+  const [pickedCategory, setpickedCategory] = useState("")
+  const [pickedWord, setPickedWord] = useState("")
+  const [letter, setletter] = useState([])
+
+  const pickWordAndCategory = () => {
+
+    //pick a random category
+    const categories = Object.keys(allWordsList)
+    const category = Math.floor(Math.random() * categories.length)
+    const randomCategory = categories[category]
+
+    //pick a random word
+    const words = Object.values(allWordsList)
+    const randomWord = words[category][Math.floor(Math.random() * words.length)]
+
+    console.log(`${randomCategory}: ${randomWord}`)
+    return { randomCategory, randomWord }
+  }
+
+  pickWordAndCategory()
 
   const handleMenuScreen = () => {
     setGameStage(stages[0].name)
