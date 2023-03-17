@@ -1,11 +1,16 @@
+import { Screens } from "../../interfaces/Screens"
+import { Button } from "../Button/Button"
 import "./GamingScreen"
 
-export const GamingScreen = () => {
+export const GamingScreen = ({ func }: Screens) => {
   return (
     <>
-      <h1>
-        Gaming Screen
-      </h1>
+      <div>
+        <h1>
+          Gaming Screen
+        </h1>
+        <Button handleFunc={func} text="Iniciar" />
+      </div>
     </>
   )
 }
