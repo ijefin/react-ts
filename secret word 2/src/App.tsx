@@ -19,7 +19,7 @@ function App() {
   const [word, setWords] = useState(allWordsList)
   const [pickedCategory, setpickedCategory] = useState("")
   const [pickedWord, setPickedWord] = useState("")
-  const [letter, setletter] = useState([])
+  const [letters, setletters] = useState([""])
 
   const pickWordAndCategory = () => {
 
@@ -32,6 +32,9 @@ function App() {
     const words = Object.values(allWordsList)
     const randomWord = words[category][Math.floor(Math.random() * words.length)].toLowerCase()
 
+    setpickedCategory(randomCategory)
+    setPickedWord(randomWord)
+
     return { randomCategory, randomWord }
   }
 
@@ -43,11 +46,13 @@ function App() {
   const startGame = () => {
     const { randomCategory, randomWord } = pickWordAndCategory()
 
+    //generate a splited array with selected word
     const listOfLetters = randomWord.split("")
+    setletters(listOfLetters)
 
     console.log(randomCategory, randomWord, listOfLetters)
 
-
+    console.log(typeof listOfLetters)
     setGameStage(stages[1].name)
   }
 
@@ -57,12 +62,12 @@ function App() {
 
   //process the letter input
 
-
+  console.log(letters)
 
   return (
     <div className="app">
       {gameStage === "menu" && <StartScreen func={startGame} />}
-      {gameStage === "gaming" && <GamingScreen func={verifyLetter} />}
+      {gameStage === "gaming" && <GamingScreen secretWord={letters} tip={pickedCategory} func={verifyLetter} />}
       {gameStage === "end" && <EndScreen func={handleMenuScreen} />}
     </div>
   )

@@ -11,8 +11,6 @@ export const EndScreen = ({ func }: Screens) => {
         </h1>
         <Button handleFunc={func} text="Voltar ao menu" />
       </div>
-
-
     </>
   )
 }
