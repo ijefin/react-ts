@@ -10,7 +10,7 @@ export const GamingScreen = ({ func, tip, secretWord }: Screens) => {
 
   const handleSaveInputed = (e: any) => {
     e.preventDefault()
-    setInputedList([...inputedList, inputed])
+    setInputedList([...inputedList, inputed.toLowerCase()])
   }
 
   const handleInputed = (e: any) => {
