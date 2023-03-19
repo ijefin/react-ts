@@ -30,9 +30,9 @@ export const GamingScreen = ({ func, tip, secretWord }: Screens) => {
         <div className="letters-container">
 
           {
-            secretWord?.map((i) => (
-              inputedList.includes(i) ? <h1 className="letter">{i}</h1> :
-                <span className="blank"></span>
+            secretWord?.map((letter, index) => (
+              inputedList.includes(letter) ? <h1 key={index} className="letter">{letter}</h1> :
+                <span key={index} className="blank"></span>
             ))
           }
         </div>

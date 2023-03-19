@@ -51,6 +51,9 @@ export const allWordsList = {
     "Relógio",
     "Luminária",
     "Mochila",
+    "Desodorante",
+    "Tampa",
+    "Chinelo",
   ],
   programação: [
     "Python",

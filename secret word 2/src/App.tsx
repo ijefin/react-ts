@@ -50,17 +50,12 @@ function App() {
     const listOfLetters = randomWord.split("")
     setletters(listOfLetters)
 
-    console.log(randomCategory, randomWord, listOfLetters)
-
-    console.log(typeof listOfLetters)
     setGameStage(stages[1].name)
   }
 
   const verifyLetter = () => {
     setGameStage(stages[2].name)
   }
-
-  //process the letter input
 
   return (
     <div className="app">
