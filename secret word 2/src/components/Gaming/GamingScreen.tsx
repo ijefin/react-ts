@@ -6,18 +6,19 @@ import "./GamingScreen.css"
 export const GamingScreen = ({ func, tip, secretWord }: Screens) => {
 
   const [inputed, setInputed] = useState("")
-  const [inputedList, setInputedList] = useState([""])
+  const [inputedList, setInputedList] = useState(Array<string>)
 
   const handleSaveInputed = (e: any) => {
     e.preventDefault()
     setInputedList([...inputedList, inputed.toLowerCase()])
+    setInputed("")
   }
 
   const handleInputed = (e: any) => {
     setInputed(e.target.value)
   }
 
-  console.log(inputed)
+  console.log(inputedList)
 
   return (
     <>
@@ -36,7 +37,7 @@ export const GamingScreen = ({ func, tip, secretWord }: Screens) => {
           }
         </div>
         <label htmlFor="">
-          <input onChange={handleInputed} type="text" placeholder="Digite uma letra" />
+          <input value={inputed} onChange={handleInputed} type="text" placeholder="Digite uma letra" />
           <button onClick={handleSaveInputed}>OK</button>
         </label>
         <div>

@@ -17,8 +17,8 @@
   .letter {
     background-color: aqua;
     border: 2px solid white;
-    width: 30px;
-    height: 30px;
+    width: 4vh;
+    height: 4vh;
     font-size: 23px;
   }
   h1 {
@@ -26,5 +26,21 @@
   }
   h2 {
     font-size: 35px;
+  }
+
+  input {
+    width: 50%;
+    padding: 10px 15px;
+    outline: none;
+    border: none;
+    border-right: none;
+  }
+
+  button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #5efd02;
+    cursor: pointer;
+    color: #fff;
   }
 }

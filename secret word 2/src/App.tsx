@@ -62,8 +62,6 @@ function App() {
 
   //process the letter input
 
-  console.log(letters)
-
   return (
     <div className="app">
       {gameStage === "menu" && <StartScreen func={startGame} />}
