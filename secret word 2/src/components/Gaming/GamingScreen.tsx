@@ -10,15 +10,25 @@ export const GamingScreen = ({ func, tip, secretWord }: Screens) => {
 
   const handleSaveInputed = (e: any) => {
     e.preventDefault()
-    setInputedList([...inputedList, inputed.toLowerCase()])
+    if (secretWord?.includes(inputed)) {
+      setInputedList([...inputedList, inputed.toLowerCase()])
+    }
     setInputed("")
   }
-
   const handleInputed = (e: any) => {
+
     setInputed(e.target.value)
   }
 
-  console.log(inputedList)
+  const handleShowOrNot: any = (letter: string, index: number) => {
+    if (inputedList.includes(letter)) {
+      return <h1 key={index} className="letter">{letter}</h1>
+    } else {
+      return <span key={index} className="blank"></span>
+    }
+  }
+
+  console.log(secretWord)
 
   return (
     <>
@@ -28,11 +38,9 @@ export const GamingScreen = ({ func, tip, secretWord }: Screens) => {
         </h1>
         <h2>Dica: {tip}</h2>
         <div className="letters-container">
-
           {
-            secretWord?.map((letter, index) => (
-              inputedList.includes(letter) ? <h1 key={index} className="letter">{letter}</h1> :
-                <span key={index} className="blank"></span>
+            secretWord?.map((letter: string, index: number) => (
+              handleShowOrNot(letter, index)
             ))
           }
         </div>
