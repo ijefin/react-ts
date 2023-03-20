@@ -4,4 +4,5 @@ export interface Screens {
     tip?: string
     secretWord?: string[]
     guesses?: number
+    verifyGuesses?: number | any
 }

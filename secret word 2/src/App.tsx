@@ -12,7 +12,6 @@ const stages: Array<Stages> = [
   { id: 3, name: "end" }
 ]
 
-
 function App() {
 
   const [gameStage, setGameStage] = useState(stages[0].name)
@@ -20,7 +19,17 @@ function App() {
   const [pickedCategory, setpickedCategory] = useState("")
   const [pickedWord, setPickedWord] = useState("")
   const [letters, setletters] = useState([""])
+  const [guesses, setGuesses] = useState(5)
 
+  useEffect(() => {
+    if (guesses <= 0) {
+      setGameStage(stages[2].name)
+    }
+  }, [guesses])
+
+  const removeGuesses = () => {
+    setGuesses(guesses - 1)
+  }
 
   const pickWordAndCategory = () => {
 
@@ -50,7 +59,6 @@ function App() {
     //generate a splited array with selected word
     const listOfLetters = randomWord.split("")
     setletters(listOfLetters)
-
     setGameStage(stages[1].name)
   }
 
@@ -61,7 +69,7 @@ function App() {
   return (
     <div className="app">
       {gameStage === "menu" && <StartScreen func={startGame} />}
-      {gameStage === "gaming" && <GamingScreen secretWord={letters} tip={pickedCategory} func={verifyLetter} />}
+      {gameStage === "gaming" && <GamingScreen verifyGuesses={removeGuesses} guesses={guesses} secretWord={letters} tip={pickedCategory} func={verifyLetter} />}
       {gameStage === "end" && <EndScreen func={handleMenuScreen} />}
     </div>
   )

@@ -5,13 +5,12 @@ import "./GamingScreen.css"
 import { toast } from 'react-toastify';
 
 
-export const GamingScreen = ({ func, tip, secretWord }: Screens) => {
+export const GamingScreen = ({ func, tip, secretWord, guesses, verifyGuesses }: Screens) => {
 
   const [letter, setletter] = useState("")
   const [guessedLetters, setGuessedLetters] = useState(Array<string>)
   const [wrongLetters, setwrongLetters] = useState(Array<string>)
   const letterRef: any = useRef(null)
-
 
   const handleSaveInputed = (e: any) => {
     e.preventDefault()
@@ -41,6 +40,7 @@ export const GamingScreen = ({ func, tip, secretWord }: Screens) => {
       setGuessedLetters([...guessedLetters, letter])
     } else {
       setwrongLetters([...wrongLetters, letter])
+      verifyGuesses()
     }
   }
 
@@ -51,7 +51,7 @@ export const GamingScreen = ({ func, tip, secretWord }: Screens) => {
           Adivinhe a palavra!
         </h1>
         <h2>Dica: {tip}</h2>
-        <p>Tentativas: </p>
+        <p>Tentativas: {guesses}</p>
         <div className="letters-container">
           {
             secretWord?.map((letter, index) => (
