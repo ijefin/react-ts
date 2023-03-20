@@ -2,14 +2,14 @@ import { Screens } from "../../interfaces/Screens"
 import { Button } from "../Button/Button"
 import "./EndScreen.css"
 
-export const EndScreen = ({ func }: Screens) => {
+export const EndScreen = () => {
   return (
     <>
       <div>
         <h1>
-          End Screen
+          Você não acertou a palavra!
         </h1>
-        <Button handleFunc={func} text="Voltar ao menu" />
+        <Button handleFunc={() => window.location.reload()} text="Reiniciar" />
       </div>
     </>
   )

@@ -2,7 +2,7 @@ import './App.css'
 import { StartScreen } from './components/StartScreen/StartScreen'
 import { Stages } from "./interfaces/Stages"
 import { allWordsList } from "../words"
-import { useCallback, useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { GamingScreen } from './components/Gaming/GamingScreen'
 import { EndScreen } from './components/End/EndScreen'
 
