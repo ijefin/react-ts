@@ -2,6 +2,8 @@ import { useState } from "react"
 import { Screens } from "../../interfaces/Screens"
 import { Button } from "../Button/Button"
 import "./GamingScreen.css"
+import { toast } from 'react-toastify';
+
 
 export const GamingScreen = ({ func, tip, secretWord }: Screens) => {
 
@@ -15,8 +17,6 @@ export const GamingScreen = ({ func, tip, secretWord }: Screens) => {
     setletter("")
   }
 
-  console.log("correct:", guessedLetters, "wrong:", wrongLetters)
-
   const handleInputed = (e: any) => {
 
     setletter(e.target.value)
@@ -25,7 +25,7 @@ export const GamingScreen = ({ func, tip, secretWord }: Screens) => {
   const verifyLetter = () => {
     const normalizedLetter = letter.toLowerCase()
     if (guessedLetters.includes(normalizedLetter) || wrongLetters.includes(normalizedLetter)) {
-      console.log("Você ja jogou essa letra")
+      toast.warning("Você ja jogou esta letra!")
     }
 
     secretWord?.includes(letter)
@@ -33,10 +33,6 @@ export const GamingScreen = ({ func, tip, secretWord }: Screens) => {
       setGuessedLetters([...guessedLetters, letter])
       : setwrongLetters([...wrongLetters, letter])
   }
-
-  console.log(secretWord)
-  console.log(letter)
-  console.log(guessedLetters)
 
   return (
     <>
