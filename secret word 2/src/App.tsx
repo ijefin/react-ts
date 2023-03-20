@@ -2,7 +2,7 @@ import './App.css'
 import { StartScreen } from './components/StartScreen/StartScreen'
 import { Stages } from "./interfaces/Stages"
 import { allWordsList } from "../words"
-import { useCallback, useState, useEffect } from 'react'
+import { useCallback, useState, useEffect, useRef } from 'react'
 import { GamingScreen } from './components/Gaming/GamingScreen'
 import { EndScreen } from './components/End/EndScreen'
 
@@ -20,6 +20,7 @@ function App() {
   const [pickedCategory, setpickedCategory] = useState("")
   const [pickedWord, setPickedWord] = useState("")
   const [letters, setletters] = useState([""])
+
 
   const pickWordAndCategory = () => {
 

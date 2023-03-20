@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { Screens } from "../../interfaces/Screens"
 import { Button } from "../Button/Button"
 import "./GamingScreen.css"
@@ -10,29 +10,38 @@ export const GamingScreen = ({ func, tip, secretWord }: Screens) => {
   const [letter, setletter] = useState("")
   const [guessedLetters, setGuessedLetters] = useState(Array<string>)
   const [wrongLetters, setwrongLetters] = useState(Array<string>)
+  const letterRef: any = useRef(null)
+
 
   const handleSaveInputed = (e: any) => {
     e.preventDefault()
     verifyLetter()
     setletter("")
+
+    letterRef.current.focus()
   }
 
   const handleInputed = (e: any) => {
-
     setletter(e.target.value)
   }
 
   const verifyLetter = () => {
+
+    if (letter.length < 1) {
+      toast.error("Insira uma letra")
+      return
+    }
+
     const normalizedLetter = letter.toLowerCase()
     if (guessedLetters.includes(normalizedLetter) || wrongLetters.includes(normalizedLetter)) {
       toast.error("Letra já jogada")
       return
     }
-
-    secretWord?.includes(letter)
-      ?
+    if (secretWord?.includes(letter)) {
       setGuessedLetters([...guessedLetters, letter])
-      : setwrongLetters([...wrongLetters, letter])
+    } else {
+      setwrongLetters([...wrongLetters, letter])
+    }
   }
 
   return (
@@ -42,8 +51,8 @@ export const GamingScreen = ({ func, tip, secretWord }: Screens) => {
           Adivinhe a palavra!
         </h1>
         <h2>Dica: {tip}</h2>
+        <p>Tentativas: </p>
         <div className="letters-container">
-
           {
             secretWord?.map((letter, index) => (
               guessedLetters.includes(letter) ? <h1 key={index} className="letter">{letter}</h1> :
@@ -51,15 +60,15 @@ export const GamingScreen = ({ func, tip, secretWord }: Screens) => {
             ))
           }
         </div>
-        <label htmlFor="">
-          <input maxLength={1} value={letter} onChange={handleInputed} type="text" placeholder="Digite uma letra" />
+        <label>
+          <input ref={letterRef} maxLength={1} value={letter} onChange={handleInputed} type="text" placeholder="Digite uma letra" />
           <button onClick={handleSaveInputed}>OK</button>
         </label>
         <div>
           <Button handleFunc={func} text="Iniciar" />
         </div>
         <div className="playedLetters">
-          <p>Letras erradas: {wrongLetters.map((letter) => <span>{letter}, </span>)}</p>
+          <p>Letras erradas: {wrongLetters.map((letter, index) => <span key={index} >{letter}, </span>)}</p>
         </div>
       </div>
     </>
