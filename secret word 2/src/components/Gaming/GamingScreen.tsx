@@ -5,22 +5,38 @@ import "./GamingScreen.css"
 
 export const GamingScreen = ({ func, tip, secretWord }: Screens) => {
 
-  const [inputed, setInputed] = useState("")
-  const [inputedList, setInputedList] = useState(Array<string>)
+  const [letter, setletter] = useState("")
+  const [guessedLetters, setGuessedLetters] = useState(Array<string>)
+  const [wrongLetters, setwrongLetters] = useState(Array<string>)
 
   const handleSaveInputed = (e: any) => {
     e.preventDefault()
-    setInputedList([...inputedList, inputed.toLowerCase()])
-    setInputed("")
+    verifyLetter()
+    setletter("")
   }
 
+  console.log("correct:", guessedLetters, "wrong:", wrongLetters)
+
   const handleInputed = (e: any) => {
-    setInputed(e.target.value)
+
+    setletter(e.target.value)
+  }
+
+  const verifyLetter = () => {
+    const normalizedLetter = letter.toLowerCase()
+    if (guessedLetters.includes(normalizedLetter) || wrongLetters.includes(normalizedLetter)) {
+      console.log("Você ja jogou essa letra")
+    }
+
+    secretWord?.includes(letter)
+      ?
+      setGuessedLetters([...guessedLetters, letter])
+      : setwrongLetters([...wrongLetters, letter])
   }
 
   console.log(secretWord)
-  console.log(inputed)
-  console.log(inputedList)
+  console.log(letter)
+  console.log(guessedLetters)
 
   return (
     <>
@@ -33,13 +49,13 @@ export const GamingScreen = ({ func, tip, secretWord }: Screens) => {
 
           {
             secretWord?.map((letter, index) => (
-              inputedList.includes(letter) ? <h1 key={index} className="letter">{letter}</h1> :
+              guessedLetters.includes(letter) ? <h1 key={index} className="letter">{letter}</h1> :
                 <span key={index} className="blank"></span>
             ))
           }
         </div>
         <label htmlFor="">
-          <input value={inputed} onChange={handleInputed} type="text" placeholder="Digite uma letra" />
+          <input value={letter} onChange={handleInputed} type="text" placeholder="Digite uma letra" />
           <button onClick={handleSaveInputed}>OK</button>
         </label>
         <div>
