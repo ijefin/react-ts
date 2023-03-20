@@ -4,14 +4,28 @@
   align-items: center;
 }
 
+input {
+  width: 50%;
+  padding: 10px 15px;
+  outline: none;
+  border: none;
+  border-right: none;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #5efd02;
+  cursor: pointer;
+  color: #fff;
+}
+
 .blank,
 .letter {
   background-color: aqua;
   border: 2px solid white;
   width: 80px;
   height: 80px;
-  text-transform:  uppercase;
-
 }
 
 @media screen and (max-width: 700px) {
@@ -28,21 +42,5 @@
   }
   h2 {
     font-size: 35px;
-  }
-
-  input {
-    width: 50%;
-    padding: 10px 15px;
-    outline: none;
-    border: none;
-    border-right: none;
-  }
-
-  button {
-    padding: 10px 15px;
-    border: none;
-    background-color: #5efd02;
-    cursor: pointer;
-    color: #fff;
   }
 }

@@ -25,7 +25,8 @@ export const GamingScreen = ({ func, tip, secretWord }: Screens) => {
   const verifyLetter = () => {
     const normalizedLetter = letter.toLowerCase()
     if (guessedLetters.includes(normalizedLetter) || wrongLetters.includes(normalizedLetter)) {
-      toast.warning("Você ja jogou esta letra!")
+      toast.error("Letra já jogada")
+      return
     }
 
     secretWord?.includes(letter)
@@ -51,11 +52,14 @@ export const GamingScreen = ({ func, tip, secretWord }: Screens) => {
           }
         </div>
         <label htmlFor="">
-          <input value={letter} onChange={handleInputed} type="text" placeholder="Digite uma letra" />
+          <input maxLength={1} value={letter} onChange={handleInputed} type="text" placeholder="Digite uma letra" />
           <button onClick={handleSaveInputed}>OK</button>
         </label>
         <div>
           <Button handleFunc={func} text="Iniciar" />
+        </div>
+        <div className="playedLetters">
+          <p>Letras erradas: {wrongLetters.map((letter) => <span>{letter}, </span>)}</p>
         </div>
       </div>
     </>
