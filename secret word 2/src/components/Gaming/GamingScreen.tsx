@@ -5,11 +5,18 @@ import "./GamingScreen.css"
 
 export const GamingScreen = ({ func, tip, secretWord }: Screens) => {
 
-  const [inputed, setInputed] = useState("")
+  const [inputed, setInputed] = useState(String)
   const [inputedList, setInputedList] = useState(Array<string>)
   const [alreadyPlayedLetters, setAlreadyPlayedLetters]: any = useState([])
 
+  const validateInput = () => {
+    if (inputed.length < 1) {
+      return
+    }
+  }
+
   const handleSaveInputed = (e: any) => {
+    validateInput()
     e.preventDefault()
     if (secretWord?.includes(inputed)) {
       setInputedList([...inputedList, inputed.toLowerCase()])
@@ -52,13 +59,13 @@ export const GamingScreen = ({ func, tip, secretWord }: Screens) => {
         }
       </div>
       <label htmlFor="">
-        <input value={inputed} onChange={handleInputed} type="text" maxLength={1} placeholder="Digite uma letra" />
+        <input value={inputed} onChange={handleInputed} type="text" minLength={1} maxLength={1} placeholder="Digite uma letra" />
         <button onClick={handleSaveInputed}>OK</button>
       </label>
       <div>
         <Button handleFunc={func} text="Iniciar" />
       </div>
-      <h5>{alreadyPlayedLetters.map((letter: string) => letter + ", ")} </h5>
+      <h5>Letras jogadas: {alreadyPlayedLetters + " "}</h5>
     </div>
   )
 }
