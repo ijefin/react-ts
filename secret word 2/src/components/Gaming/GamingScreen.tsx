@@ -6,26 +6,31 @@ import "./GamingScreen.css"
 export const GamingScreen = ({ func, tip, secretWord }: Screens) => {
 
   const [inputed, setInputed] = useState("a")
-  const [inputedList, setInputedList] = useState(Array<string>)
-  const [wrongLetters, setWrongLetters] = useState([""])
+  const [correctLetterList, setCorrectLetterList] = useState(Array<string>)
+  const [wrongLettersList, setWrongLettersList] = useState(Array<string>)
   const [alreadyPlayedLetters, setAlreadyPlayedLetters]: any = useState([])
   const letterInputRef: any = useRef()
 
   const handleSaveInputed = (e: any) => {
-    handleWrongLetters()
     e.preventDefault()
-    if (secretWord?.includes(inputed)) {
-      setInputedList([...inputedList, inputed.toLowerCase()])
-    }
+    handleWrongLetters()
     setInputed("")
-
     letterInputRef.current.focus()
   }
 
   const handleWrongLetters = () => {
     if (!secretWord?.includes(inputed)) {
-      setWrongLetters([...wrongLetters, inputed.toLowerCase()])
+      setWrongLettersList([...wrongLettersList, inputed.toLowerCase()])
+    } else {
+      setCorrectLetterList([...correctLetterList, inputed.toLowerCase()])
     }
+  }
+
+  console.log("correct:", correctLetterList, "wrong:", wrongLettersList)
+
+  const verifyIfLetterWasAlredyUsed = () => {
+    correctLetterList.includes(inputed.toLowerCase())
+    return
   }
 
   const handleInputed = (e: any) => {
@@ -33,7 +38,7 @@ export const GamingScreen = ({ func, tip, secretWord }: Screens) => {
   }
 
   const handleShowOrNot: any = (letter: string, index: number) => {
-    if (inputedList.includes(letter)) {
+    if (correctLetterList.includes(letter)) {
       return <h1 key={index} className="letter">{letter}</h1>
     } else {
       return <span key={index} className="blank"></span>
@@ -61,7 +66,7 @@ export const GamingScreen = ({ func, tip, secretWord }: Screens) => {
         <Button handleFunc={func} text="Iniciar" />
       </div>
       <p>Letras jogadas:</p>
-      {wrongLetters.map((letter, index) => <span key={index}>{letter} </span>)}
+      {wrongLettersList.map((letter, index) => <span key={index}>{letter} </span>)}
     </div >
   )
 }
