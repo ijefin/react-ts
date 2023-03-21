@@ -1,3 +1,4 @@
+import { useState, useRef } from "react"
 import "./GamingScreen.css"
 
 export const GamingScreen = ({
@@ -10,6 +11,17 @@ export const GamingScreen = ({
     guessedLetters,
     wrongLetters
 }: any) => {
+
+    const [letter, setLetter] = useState("")
+    const letterInput: any = useRef(null)
+
+    const handleSubmit = (e: any) => {
+        e.preventDefault()
+        verifyLetter(letter)
+        setLetter("")
+        letterInput.current.focus()
+    }
+
     return (
         <div className="main-menu-container">
             <div className="points">
@@ -25,14 +37,14 @@ export const GamingScreen = ({
                 ))}
             </div>
             <div className="input-container">
-                <form>
-                    <input required name="letter" maxLength={1} type="text" />
+                <form onSubmit={handleSubmit}>
+                    <input ref={letterInput} value={letter} onChange={(e) => setLetter(e.target.value)} required name="letter" maxLength={1} type="text" />
                     <button className="form-button">OK</button>
                 </form>
             </div>
             <div className="wrongLetters">
                 <h5>Letras erradas: {wrongLetters.map(((letter: string, index: number) => <span key={index}>{letter}</span>))}</h5>
             </div>
-        </div>
+        </div >
     )
 }
