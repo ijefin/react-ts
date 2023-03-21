@@ -18,6 +18,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", "words.ts"],
+  "include": ["src", "src/data/words.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

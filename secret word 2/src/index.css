@@ -1,21 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@600&family=Hind&family=Raleway:wght@800&family=Signika+Negative:wght@500&display=swap");
-
 html,
 body {
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+}
+
+p {
+  font-weight: bolder;
 }
 
 body {
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
-  font-family: "Dosis", sans-serif;
-  font-family: "Hind", sans-serif;
-  font-family: "Raleway", sans-serif;
-  font-family: "Signika Negative", sans-serif;
-  background: linear-gradient(to right, #f66d0c, #dd2476);
-  color: #fff;
-  font-size: 30px;
+  background-image: linear-gradient(180deg, #df4103 100%, #f6eae4 50%);
+  color: rgb(255, 255, 255);
 }

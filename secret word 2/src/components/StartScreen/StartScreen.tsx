@@ -1,18 +1,11 @@
-import React from 'react'
-import { Screens } from '../../interfaces/Screens'
-import { Button } from '../Button/Button'
 import "./StartScreen.css"
 
-
-
-export const StartScreen = ({ func }: Screens) => {
+export const StartScreen = () => {
     return (
-        <>
-            <div className="menu-screen">
-                <h1 className='title'>Secret Word!</h1>
-                <h2>Clique no botão abaixo para iniciar.</h2>
-                <Button handleFunc={func} text="Iniciar" />
-            </div>
-        </>
+        <div className="main-menu-container">
+            <h1 className="menu-title">Secret Word!</h1>
+            <p>Clique no botão abaixo para iniciar.</p>
+            <button className="play-button">Iniciar</button>
+        </div>
     )
 }
