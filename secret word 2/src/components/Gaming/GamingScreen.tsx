@@ -1,24 +1,28 @@
 import "./GamingScreen.css"
 
-export const GamingScreen = ({ verifyLetter }: any) => {
+export const GamingScreen = ({
+    verifyLetter,
+    pickedWord,
+    pickedCategory,
+    guesses,
+    letters,
+    score,
+    guessedLetters,
+    wrongLetters
+}: any) => {
     return (
         <div className="main-menu-container">
             <div className="points">
-                <span>Pontuação: 000</span>
+                <span>Pontuação: {score}</span>
             </div>
-            <h4>Dica: <span className="tip">Computador</span></h4>
+            <p>Tentativas restantes: {guesses}</p>
+            <h4>Dica: <span className="tip">{pickedCategory}</span></h4>
             <div className="letters-container">
-                <span className="letter">A</span>
-                <span className="letter">A</span>
-                <span className="letter">A</span>
-                <span className="letter">A</span>
-                <span className="letter">A</span>
-                <span className="letter">A</span>
-                <span className="letter">A</span>
-                <span className="letter">A</span>
-                <span className="letter">A</span>
-                <span className="letter">A</span>
-                <span className="letter">A</span>
+                {letters.map((letter: string, index: number) => (
+                    letter.includes(guessedLetters) ?
+                        <span key={index} className="letter">{letter}</span> :
+                        <span className="blank">A</span>
+                ))}
             </div>
             <div className="input-container">
                 <form>

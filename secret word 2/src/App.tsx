@@ -18,6 +18,10 @@ export const App = () => {
   const [pickedWord, setPickedWord] = useState("")
   const [pickedCategory, setPickedCategory] = useState("")
   const [letters, setLetters] = useState([])
+  const [guessedLetters, setGuessedLetters] = useState([])
+  const [wrongLetters, setWrongLetters] = useState([])
+  const [guesses, setGuesses] = useState(5)
+  const [score, setScore] = useState(0)
 
   const pickWordAndCategory = () => {
     //random category
@@ -57,7 +61,16 @@ export const App = () => {
         gameStage === "menu" && <StartScreen startGame={startGame} />
       }
       {
-        gameStage === "gaming" && <GamingScreen verifyLetter={verifyLetter} />
+        gameStage === "gaming" && <GamingScreen
+          verifyLetter={verifyLetter}
+          pickedCategory={pickedCategory}
+          pickedWord={pickedWord}
+          letters={letters}
+          guessedLetters={guessedLetters}
+          wrongLetters={wrongLetters}
+          guesses={guesses}
+          score={score}
+        />
       }
       {
         gameStage === "over" && <EndScreen menu={retry} />
