@@ -24,6 +24,7 @@ export const App = () => {
   const [wrongLetters, setWrongLetters] = useState(Array<string>)
   const [guesses, setGuesses] = useState(guessesQty)
   const [score, setScore] = useState(0)
+  const [word, setWord] = useState("")
 
   const clearLetterStates = () => {
     setGuessedLetters([])
@@ -50,7 +51,7 @@ export const App = () => {
     setPickedCategory(randomCategory)
     setLetters(wordLetters)
     setGameStage(stages[1].name)
-  }, [pickWordAndCategory()])
+  }, [pickWordAndCategory])
 
   useEffect(() => {
     if (guesses <= 0) {
@@ -123,7 +124,8 @@ export const App = () => {
         />
       }
       {
-        gameStage === "over" && <EndScreen score={score} menu={menu} retry={retry} />
+        gameStage === "over" && <EndScreen pickedWord={pickedWord}
+          score={score} menu={menu} retry={retry} />
       }
     </div>
   )
