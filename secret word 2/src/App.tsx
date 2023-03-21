@@ -38,7 +38,6 @@ export const App = () => {
     console.log(randomCategory, randomWord)
 
     const wordLetters = randomWord.split("")
-    console.log(wordLetters)
 
     setPickedWord(randomWord)
     setPickedCategory(randomCategory)

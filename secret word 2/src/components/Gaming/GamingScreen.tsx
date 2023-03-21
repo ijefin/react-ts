@@ -19,9 +19,9 @@ export const GamingScreen = ({
             <h4>Dica: <span className="tip">{pickedCategory}</span></h4>
             <div className="letters-container">
                 {letters.map((letter: string, index: number) => (
-                    letter.includes(guessedLetters) ?
+                    guessedLetters.includes(letter) ?
                         <span key={index} className="letter">{letter}</span> :
-                        <span className="blank">A</span>
+                        <span className="blank"></span>
                 ))}
             </div>
             <div className="input-container">
@@ -31,7 +31,7 @@ export const GamingScreen = ({
                 </form>
             </div>
             <div className="wrongLetters">
-                <h5>Letras erradas: <span>a, b, c, d, e, f, g,</span></h5>
+                <h5>Letras erradas: {wrongLetters.map(((letter: string, index: number) => <span key={index}>{letter}</span>))}</h5>
             </div>
         </div>
     )
