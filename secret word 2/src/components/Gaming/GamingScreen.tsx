@@ -6,10 +6,18 @@ export const GamingScreen = ({ verifyLetter }: any) => {
             <div className="points">
                 <span>Pontuação: 000</span>
             </div>
-            <h3>Adivinhe a palavra</h3>
-            <h4>Dica: <span></span></h4>
+            <h4>Dica: <span className="tip">Computador</span></h4>
             <div className="letters-container">
-                <span className="letter">AAAAAAAAAAAAAAAA</span>
+                <span className="letter">A</span>
+                <span className="letter">A</span>
+                <span className="letter">A</span>
+                <span className="letter">A</span>
+                <span className="letter">A</span>
+                <span className="letter">A</span>
+                <span className="letter">A</span>
+                <span className="letter">A</span>
+                <span className="letter">A</span>
+                <span className="letter">A</span>
                 <span className="blank"></span>
             </div>
             <div className="input-container">

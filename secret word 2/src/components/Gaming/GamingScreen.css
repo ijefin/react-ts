@@ -30,3 +30,25 @@ form input {
 .wrongLetters span {
   color: red;
 }
+
+.tip {
+  color: rgb(57, 255, 3);
+}
+
+.letters-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5px;
+  padding: 0.5px;
+  border-radius: 10px;
+}
+
+.letter,
+.blank {
+  font-size: 20px;
+  line-height: 1.5;
+  border: 2px solid #5757e9d3;
+  width: 25px;
+  height: 25px;
+}
