@@ -17,9 +17,9 @@ export const App = () => {
   const [allWords, setAllWords] = useState(allWordsList)
   const [pickedWord, setPickedWord] = useState("")
   const [pickedCategory, setPickedCategory] = useState("")
-  const [letters, setLetters] = useState([])
-  const [guessedLetters, setGuessedLetters] = useState([])
-  const [wrongLetters, setWrongLetters] = useState([])
+  const [letters, setLetters] = useState(Array<string>)
+  const [guessedLetters, setGuessedLetters] = useState(Array<string>)
+  const [wrongLetters, setWrongLetters] = useState(Array<string>)
   const [guesses, setGuesses] = useState(5)
   const [score, setScore] = useState(0)
 
@@ -46,7 +46,25 @@ export const App = () => {
   }
 
   const verifyLetter = (letter: string) => {
-    console.log(letter)
+
+    //check if letter has alredy been utilized
+    if (guessedLetters.includes(letter) || wrongLetters.includes(letter)) {
+      return
+    }
+
+    //push guessed or remove a guess
+    if (letters.includes(letter)) {
+      setGuessedLetters((actualGuessedLetters) => [
+        ...actualGuessedLetters, letter
+      ])
+    } else {
+      setWrongLetters((actualWrongLetters) => [
+        ...actualWrongLetters, letter
+      ])
+    }
+
+    console.log(guessedLetters)
+    console.log(wrongLetters)
   }
 
   const retry = () => {

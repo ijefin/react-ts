@@ -17,7 +17,7 @@ export const GamingScreen = ({
 
     const handleSubmit = (e: any) => {
         e.preventDefault()
-        verifyLetter(letter)
+        verifyLetter(letter.toLowerCase())
         setLetter("")
         letterInput.current.focus()
     }
@@ -43,7 +43,7 @@ export const GamingScreen = ({
                 </form>
             </div>
             <div className="wrongLetters">
-                <h5>Letras erradas: {wrongLetters.map(((letter: string, index: number) => <span key={index}>{letter}</span>))}</h5>
+                <p>Letras erradas: {wrongLetters.map((letter: string, index: number) => <span key={index} >{`${letter},`} </span>)}</p>
             </div>
         </div >
     )
