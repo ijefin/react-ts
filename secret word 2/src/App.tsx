@@ -23,14 +23,22 @@ export const App = () => {
     //random category
     const categories = Object.keys(allWords)
     const randomCategory = categories[Math.floor(Math.random() * categories.length)]
-    const randomWord = allWords[randomCategory][Math.floor(Math.random() * allWords[randomCategory].length)]
-  }
+    const randomWord = allWords[randomCategory][Math.floor(Math.random() * allWords[randomCategory].length)].toLowerCase()
 
-  pickWordAndCategory()
+    return { randomCategory, randomWord }
+  }
 
   const startGame = () => {
     //pick word and pick category
+    const { randomCategory, randomWord } = pickWordAndCategory()
+    console.log(randomCategory, randomWord)
 
+    const wordLetters = randomWord.split("")
+    console.log(wordLetters)
+
+    setPickedWord(randomWord)
+    setPickedCategory(randomCategory)
+    setLetters(wordLetters)
     setGameStage(stages[1].name)
   }
 
