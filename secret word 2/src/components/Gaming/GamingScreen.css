@@ -5,6 +5,10 @@
   margin-top: 20px;
 }
 
+.points {
+  font-size: 25px;
+}
+
 form input {
   outline: none;
   border: none;
@@ -25,6 +29,7 @@ form input {
 .wrongLetters {
   font-size: 25px;
   font-weight: 500;
+  margin-top: -25px;
 }
 
 .wrongLetters span {
@@ -39,16 +44,14 @@ form input {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0.5px;
-  padding: 0.5px;
-  border-radius: 10px;
+  background-color: #ffffff;
 }
 
 .letter,
 .blank {
   font-size: 20px;
   line-height: 1.5;
-  border: 2px solid #5757e9d3;
+  border: 1px solid #5757e9d3;
   width: 25px;
   height: 25px;
 }

@@ -18,7 +18,7 @@ export const GamingScreen = ({ verifyLetter }: any) => {
                 <span className="letter">A</span>
                 <span className="letter">A</span>
                 <span className="letter">A</span>
-                <span className="blank"></span>
+                <span className="letter">A</span>
             </div>
             <div className="input-container">
                 <form>
