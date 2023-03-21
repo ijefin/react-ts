@@ -2,7 +2,7 @@
   padding: 20%;
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
-  box-shadow: rgb(9, 9, 9) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  box-shadow: rgb(54, 53, 53) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   background-color: #272a3d;
 }
 
@@ -25,7 +25,7 @@
 }
 
 .play-button:hover {
-  background-color: rgb(14, 7, 71);
-  border: 1.5px solid rgb(14, 7, 71);
+  background-color: #5757e9d3;
+  border: 1.5px solid #5757e9d3;
   color: rgb(255, 255, 255);
 }
