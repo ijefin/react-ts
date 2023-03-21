@@ -1,5 +1,7 @@
 .main-menu-container {
-  padding: 10%;
+  width: 45vh;
+  padding-top: 50px;
+  padding-bottom: 50px;
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
   box-shadow: rgb(54, 53, 53) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
@@ -14,7 +16,7 @@
 .play-button {
   margin-top: 5px;
   height: 5vh;
-  width: 100%;
+  width: 40%;
   outline: none;
   border: none;
   border-radius: 20px;

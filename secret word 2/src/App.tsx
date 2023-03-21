@@ -93,6 +93,7 @@ export const App = () => {
   }
 
   const retry = () => {
+    startGame()
     setScore(0)
     setGuesses(guessesQty)
     setGameStage(stages[1].name)
