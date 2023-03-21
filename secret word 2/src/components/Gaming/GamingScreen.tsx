@@ -33,7 +33,7 @@ export const GamingScreen = ({
                 {letters.map((letter: string, index: number) => (
                     guessedLetters.includes(letter) ?
                         <span key={index} className="letter">{letter}</span> :
-                        <span className="blank"></span>
+                        <span key={index} className="blank"></span>
                 ))}
             </div>
             <div className="input-container">
