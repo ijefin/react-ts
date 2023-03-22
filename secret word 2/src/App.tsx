@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react"
 import { EndScreen } from "./components/End/EndScreen"
 import "./App.css"
 import { allWordsList } from "./data/words"
+import { toast } from 'react-toastify';
 
 export const App = () => {
 
@@ -65,6 +66,7 @@ export const App = () => {
     text = text.replace(/[ÀÁÂÃ]/, "A");
     text = text.replace(/[àáâã]/, "a");
     text = text.replace(/[ÈÉÊË]/, "E");
+    text = text.replace(/[èéê]/, "e");
     text = text.replace(/[ÌÍ]/, "I");
     text = text.replace(/[ìí]/, "i");
     text = text.replace(/[ÓÒÔÕ]/, "O");
@@ -82,8 +84,13 @@ export const App = () => {
 
     if (guessedLetters.length === finalUniqueLetters.length && gameStage === "gaming") {
       setScore((actualScore) => actualScore + 100)
-      startGame()
+      toast.success("Você acertou!")
+      setTimeout(() => {
+        startGame()
+      }, 1300)
     }
+
+    console.log(finalUniqueLetters)
 
   }, [guessedLetters, letters, startGame])
 

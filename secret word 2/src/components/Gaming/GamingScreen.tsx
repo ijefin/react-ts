@@ -13,12 +13,10 @@ export const GamingScreen = ({
 
     const removerSpecials = (text: string) => {
         // eliminando acentuação
-        text = text.replace(/[ÀÁÂÃ]/, "A");
         text = text.replace(/[àáâã]/, "a");
-        text = text.replace(/[ÈÉÊË]/, "E");
+        text = text.replace(/[èéê]/, "e");
         text = text.replace(/[ÌÍ]/, "I");
         text = text.replace(/[ìí]/, "i");
-        text = text.replace(/[ÓÒÔÕ]/, "O");
         text = text.replace(/[óòôõ]/, "o");
         text = text.replace(/[úù]/, "o");
         text = text.replace(/[Ç]/, "C");

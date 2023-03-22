@@ -28,7 +28,6 @@ export const allWordsList = {
     "kiwi",
     "laranja",
     "limão",
-    "maçã",
     "mamão",
     "manga",
     "maracujá",
@@ -45,7 +44,6 @@ export const allWordsList = {
 
   corpo: [
     "cérebro",
-    "coração",
     "estômago",
     "rim",
     "pâncreas",
@@ -98,7 +96,11 @@ export const allWordsList = {
     "headset",
   ],
 
+  estado: ["Piauí"],
+
   diversos: [
+    "dominó",
+    "crachá",
     "caneta",
     "caderno",
     "cadeira",
@@ -125,6 +127,7 @@ export const allWordsList = {
   ],
 
   casa: [
+    "sótão",
     "cadeira",
     "mesa",
     "cama",
