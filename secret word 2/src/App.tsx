@@ -60,12 +60,27 @@ export const App = () => {
     }
   }, [guesses])
 
+  const removerSpecials = (text: string) => {
+    // eliminando acentuação
+    text = text.replace(/[ÀÁÂÃ]/, "A");
+    text = text.replace(/[àáâã]/, "a");
+    text = text.replace(/[ÈÉÊË]/, "E");
+    text = text.replace(/[ÌÍ]/, "I");
+    text = text.replace(/[ìí]/, "i");
+    text = text.replace(/[ÓÒÔÕ]/, "O");
+    text = text.replace(/[óòôõ]/, "o");
+    text = text.replace(/[úù]/, "o");
+    text = text.replace(/[Ç]/, "C");
+    text = text.replace(/[ç]/, "c");
+    return text.replace(/[^a-z0-9]/gi, '');
+  }
 
   useEffect(() => {
     const uniqueLetters = [...new Set(letters)]
-    console.log(uniqueLetters)
+    const removeSpecials = uniqueLetters.map((letters) => removerSpecials(letters))
+    const finalUniqueLetters = [...new Set(removeSpecials)]
 
-    if (guessedLetters.length === uniqueLetters.length && gameStage === "gaming") {
+    if (guessedLetters.length === finalUniqueLetters.length && gameStage === "gaming") {
       setScore((actualScore) => actualScore + 100)
       startGame()
     }
