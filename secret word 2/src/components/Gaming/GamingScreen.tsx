@@ -3,7 +3,6 @@ import "./GamingScreen.css"
 
 export const GamingScreen = ({
     verifyLetter,
-    pickedWord,
     pickedCategory,
     guesses,
     letters,
@@ -11,6 +10,21 @@ export const GamingScreen = ({
     guessedLetters,
     wrongLetters
 }: any) => {
+
+    const removerSpecials = (text: string) => {
+        // eliminando acentuação
+        text = text.replace(/[ÀÁÂÃ]/, "A");
+        text = text.replace(/[àáâã]/, "a");
+        text = text.replace(/[ÈÉÊË]/, "E");
+        text = text.replace(/[ÌÍ]/, "I");
+        text = text.replace(/[ìí]/, "i");
+        text = text.replace(/[ÓÒÔÕ]/, "O");
+        text = text.replace(/[óòôõ]/, "o");
+        text = text.replace(/[úù]/, "o");
+        text = text.replace(/[Ç]/, "C");
+        text = text.replace(/[ç]/, "c");
+        return text.replace(/[^a-z0-9]/gi, '');
+    }
 
     const [letter, setLetter] = useState("")
     const letterInput: any = useRef(null)
@@ -31,7 +45,7 @@ export const GamingScreen = ({
             <h4>Dica: <span className="tip">{pickedCategory}</span></h4>
             <div className="letters-container">
                 {letters.map((letter: string, index: number) => (
-                    guessedLetters.includes(letter) ?
+                    guessedLetters.includes(removerSpecials(letter)) ?
                         <span key={index} className="letter">{letter}</span> :
                         <span key={index} className="blank"></span>
                 ))}

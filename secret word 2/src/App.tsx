@@ -45,7 +45,8 @@ export const App = () => {
     clearLetterStates()
     //pick word and pick category
     const { randomCategory, randomWord } = pickWordAndCategory()
-    const wordLetters = randomWord.split("")
+    const wordLetters: any = randomWord.split("")
+    console.log(wordLetters)
 
     setPickedWord(randomWord)
     setPickedCategory(randomCategory)
