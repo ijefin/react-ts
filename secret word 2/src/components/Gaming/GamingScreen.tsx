@@ -1,5 +1,6 @@
 import { useState, useRef } from "react"
 import "./GamingScreen.css"
+import { ToastContainer } from 'react-toastify';
 
 export const GamingScreen = ({
     verifyLetter,
@@ -39,6 +40,18 @@ export const GamingScreen = ({
             <div className="points">
                 <span>Pontuação: {score}</span>
             </div>
+            <ToastContainer
+                position="top-center" 
+                autoClose={800}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
             <p>Tentativas restantes: {guesses}</p>
             <h4>Dica: <span className="tip">{pickedCategory}</span></h4>
             <div className="letters-container">
