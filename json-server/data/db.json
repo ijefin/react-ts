@@ -51,24 +51,24 @@
       "price": "239.99"
     },
     {
-      "id": 11,
-      "name": "Truck Hondar",
-      "price": "239.99"
+      "productName": "macaco",
+      "productPrice": 55,
+      "id": 11
     },
     {
-      "id": 11,
-      "name": "Truck Hondar",
-      "price": "239.99"
+      "productName": "Macacao",
+      "productPrice": 55,
+      "id": 12
     },
     {
-      "id": 11,
-      "name": "Truck Hondar",
-      "price": "239.99"
+      "productName": "teste",
+      "productPrice": 55,
+      "id": 13
     },
     {
-      "id": 11,
-      "name": "Truck Hondar",
-      "price": "239.99"
+      "name": "teste",
+      "price": 55,
+      "id": 14
     }
   ]
 }
