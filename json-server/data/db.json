@@ -1,0 +1,74 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Shape Marfin",
+      "price": "129.99"
+    },
+    {
+      "id": 2,
+      "name": "Shape Maple",
+      "price": "259.99"
+    },
+    {
+      "id": 3,
+      "name": "Roda Spitfire",
+      "price": "329.99"
+    },
+    {
+      "id": 4,
+      "name": "Roda Bones",
+      "price": "229.99"
+    },
+    {
+      "id": 5,
+      "name": "Roda Connexion",
+      "price": "279.99"
+    },
+    {
+      "id": 6,
+      "name": "Lixa comum",
+      "price": "19.99"
+    },
+    {
+      "id": 7,
+      "name": "Lixa Emborrachada",
+      "price": "59.99"
+    },
+    {
+      "id": 8,
+      "name": "Parafuso central Sextavado",
+      "price": "19.99"
+    },
+    {
+      "id": 9,
+      "name": "Truck Independent",
+      "price": "259.99"
+    },
+    {
+      "id": 10,
+      "name": "Truck Hondar",
+      "price": "239.99"
+    },
+    {
+      "id": 11,
+      "name": "Truck Hondar",
+      "price": "239.99"
+    },
+    {
+      "id": 11,
+      "name": "Truck Hondar",
+      "price": "239.99"
+    },
+    {
+      "id": 11,
+      "name": "Truck Hondar",
+      "price": "239.99"
+    },
+    {
+      "id": 11,
+      "name": "Truck Hondar",
+      "price": "239.99"
+    }
+  ]
+}
