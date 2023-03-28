@@ -19,7 +19,6 @@ export const App = () => {
 
   const { data: items } = useFetch(url)
 
-
   const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault()
 
@@ -27,8 +26,6 @@ export const App = () => {
       name,
       price: parseFloat(price).toFixed(2)
     }
-
-    console.log(typeof price)
 
     const res = await fetch(url, {
       method: "POST",

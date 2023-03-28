@@ -54,6 +54,21 @@
       "name": "Chave Y Hondar",
       "price": "59.00",
       "id": 11
+    },
+    {
+      "name": "macaco",
+      "price": "55.76",
+      "id": 12
+    },
+    {
+      "name": "puta",
+      "price": "2.50",
+      "id": 13
+    },
+    {
+      "name": "teste",
+      "price": "55.00",
+      "id": 14
     }
   ]
 }
