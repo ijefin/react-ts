@@ -4,8 +4,10 @@ import "./Card.css"
 interface cardContent {
     title: string,
     price: number
+    remove: any
 }
-export const Card = ({ title, price }: cardContent) => {
+
+export const Card = ({ title, price, remove }: cardContent) => {
 
     return (
         <div className='card'>
@@ -15,6 +17,7 @@ export const Card = ({ title, price }: cardContent) => {
             <div className="card-price">
                 <h4>{price}</h4>
             </div>
+            <button onClick={remove}>Remover</button>
         </div>
     )
 }

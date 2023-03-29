@@ -20,3 +20,7 @@
   color: rgb(8, 200, 8);
   background-color: aliceblue;
 }
+
+button {
+  margin: 20px;
+}

@@ -1,79 +1,19 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "Shape Marfin",
-      "price": "129.99"
-    },
-    {
-      "id": 2,
-      "name": "Shape Maple",
-      "price": "259.99"
-    },
-    {
-      "id": 3,
-      "name": "Roda Spitfire",
-      "price": "329.99"
-    },
-    {
-      "id": 4,
-      "name": "Roda Bones",
-      "price": "229.99"
-    },
-    {
-      "id": 5,
-      "name": "Roda Connexion",
-      "price": "279.99"
-    },
-    {
-      "id": 6,
-      "name": "Lixa comum",
-      "price": "19.99"
-    },
-    {
-      "id": 7,
-      "name": "Lixa Emborrachada",
-      "price": "59.99"
-    },
-    {
-      "id": 8,
-      "name": "Parafuso central Sextavado",
-      "price": "19.99"
-    },
-    {
-      "id": 9,
-      "name": "Truck Independent",
-      "price": "259.99"
-    },
-    {
-      "id": 10,
-      "name": "Truck Hondar",
-      "price": "239.99"
-    },
-    {
-      "name": "Chave Y Hondar",
-      "price": "59.00",
-      "id": 11
-    },
-    {
-      "name": "macaco",
-      "price": "55.76",
-      "id": 12
-    },
-    {
-      "name": "puta",
-      "price": "2.50",
-      "id": 13
+      "name": "teste",
+      "price": "25.00",
+      "id": 1
     },
     {
       "name": "teste",
-      "price": "55.00",
-      "id": 14
+      "price": "25.00",
+      "id": 2
     },
     {
-      "name": "CADEIRA",
-      "price": "99.90",
-      "id": 15
+      "name": "teste",
+      "price": "25.00",
+      "id": 3
     }
   ]
 }

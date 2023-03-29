@@ -17,7 +17,7 @@ export const App = () => {
   const [name, setproductName] = useState(String)
   const [price, setproductPrice] = useState(String || Number)
 
-  const { data: items, httpConfig } = useFetch(url)
+  const { data: items, httpConfig, loading, error } = useFetch(url)
 
   const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault()
@@ -33,6 +33,10 @@ export const App = () => {
     setproductPrice("")
   }
 
+  const handleRemove = (id: number) => {
+    httpConfig(id, "DELETE")
+  }
+
   return (
     <>
       <div>
@@ -45,12 +49,17 @@ export const App = () => {
             Preço:
           </label>
           <input type="number" step={0.01} value={price} id="productPrice" onChange={(e) => setproductPrice(e.target.value)} />
-          <input type="submit" value="Enviar" />
+          {loading && <input type="submit" disabled value="Aguarde..." />}
+          {!loading && <input type="submit" value="Enviar" />}
         </form>
       </div>
-      <div className="App">
-        {items.map((prod: data) => <Card key={prod.id} title={prod.name} price={prod.price} />)}
-      </div>
+      {loading && <p>Carregando dados..</p>}
+      {error && <p>{error}</p>}
+      {!error && <div className="App">
+        {items.map((prod: data) => (<>
+          <Card key={prod.id} remove={() => handleRemove(prod.id)} title={prod.name} price={prod.price} />
+        </>))}
+      </div>}
     </>
   );
 };

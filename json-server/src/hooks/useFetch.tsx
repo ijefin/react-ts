@@ -8,6 +8,8 @@ export const useFetch = (url: string) => {
     const [method, setMethod]: any = useState(null)
     const [callFetch, setCallFetch] = useState(false)
     const [loading, setLoading] = useState(false)
+    const [error, setError] = useState("")
+    const [itemId, setItemId] = useState()
 
     const httpConfig = (data: any, method: string) => {
         if (method === "POST") {
@@ -21,6 +23,18 @@ export const useFetch = (url: string) => {
 
             setMethod(method)
         }
+
+        if (method === "DELETE") {
+            setConfig({
+                method,
+                headers: {
+                    "Content-type": "application/json"
+                }
+            })
+
+            setMethod(method)
+            setItemId(data)
+        }
     }
 
     useEffect(() => {
@@ -28,10 +42,16 @@ export const useFetch = (url: string) => {
 
             setLoading(true)
 
-            const res = await fetch(url)
+            try {
+                const res = await fetch(url)
 
-            const json = await res.json()
-            setData(json)
+                const json = await res.json()
+                setData(json)
+
+            } catch (error) {
+                console.log(error)
+                setError("Houve um erro ao carregar os dados")
+            }
 
             setLoading(false)
         }
@@ -41,20 +61,33 @@ export const useFetch = (url: string) => {
 
     useEffect(() => {
         const httpRequest = async () => {
+            let json
+
             if (method === "POST") {
                 let fetchOptions = [url, config] as const
 
                 const res = await fetch(...fetchOptions)
 
-                const json = await res.json()
+                json = await res.json()
+
+            }
+
+            if (method === "DELETE") {
+                const res = await fetch(`${url}/${itemId}`, config)
+                json = await res.json()
 
                 setCallFetch(json)
             }
+
+            setCallFetch(json)
+
         }
+
+
 
         httpRequest()
     }, [config, method, url])
 
-    return { data, httpConfig }
+    return { data, httpConfig, loading, error }
 
 }
