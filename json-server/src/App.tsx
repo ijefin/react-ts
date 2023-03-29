@@ -17,7 +17,7 @@ export const App = () => {
   const [name, setproductName] = useState(String)
   const [price, setproductPrice] = useState(String || Number)
 
-  const { data: items } = useFetch(url)
+  const { data: items, httpConfig } = useFetch(url)
 
   const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault()
@@ -27,17 +27,7 @@ export const App = () => {
       price: parseFloat(price).toFixed(2)
     }
 
-    const res = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newProduct)
-    })
-
-    const addedProduct = await res.json();
-
-    setProducts((prevProduct) => [...prevProduct, addedProduct])
+    httpConfig(newProduct, "POST")
 
     setproductName("")
     setproductPrice("")

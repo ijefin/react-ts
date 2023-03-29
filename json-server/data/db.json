@@ -69,6 +69,11 @@
       "name": "teste",
       "price": "55.00",
       "id": 14
+    },
+    {
+      "name": "CADEIRA",
+      "price": "99.90",
+      "id": 15
     }
   ]
 }
