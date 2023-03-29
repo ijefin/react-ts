@@ -1,19 +1,14 @@
 {
   "products": [
     {
-      "name": "teste",
-      "price": "25.00",
+      "name": "Shape Plan B",
+      "price": "229.90",
       "id": 1
     },
     {
-      "name": "teste",
-      "price": "25.00",
+      "name": "Macaco",
+      "price": "55.00",
       "id": 2
-    },
-    {
-      "name": "teste",
-      "price": "25.00",
-      "id": 3
     }
   ]
 }

@@ -35,6 +35,7 @@ export const App = () => {
 
   const handleRemove = (id: number) => {
     httpConfig(id, "DELETE")
+    console.log(id)
   }
 
   return (
@@ -54,11 +55,12 @@ export const App = () => {
         </form>
       </div>
       {loading && <p>Carregando dados..</p>}
-      {error && <p>{error}</p>}
+      {error && <p key={""}>{error}</p>}
       {!error && <div className="App">
-        {items.map((prod: data) => (<>
-          <Card key={prod.id} remove={() => handleRemove(prod.id)} title={prod.name} price={prod.price} />
-        </>))}
+        {items.map((prod: data) => (
+          <div key={prod.id}>
+            <Card key={prod.id} remove={() => handleRemove(prod.id)} title={prod.name} price={prod.price} />
+          </div>))}
       </div>}
     </>
   );
