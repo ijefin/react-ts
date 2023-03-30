@@ -9,6 +9,21 @@
       "name": "Teclado Hyperx Alloy Elite",
       "price": "355.00",
       "id": 2
+    },
+    {
+      "name": "Mouse Hyperx Pulsefire FPS PRO",
+      "price": "329.90",
+      "id": 3
+    },
+    {
+      "name": "Teclado Hyperx Mars RGB",
+      "price": "355.00",
+      "id": 4
+    },
+    {
+      "name": "Head Set Hyperx Orbit",
+      "price": "1229.90",
+      "id": 5
     }
   ]
 }
