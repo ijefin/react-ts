@@ -5,6 +5,7 @@ import { About } from "./pages/About/About";
 import { Navbar } from "./componentes/Navbar/Navbar";
 import { Product } from "./pages/Product/Product";
 import { Info } from "./pages/Info/Info";
+import { NotFound } from "./pages/404/NotFound";
 
 export const App = () => {
   return (
@@ -17,6 +18,7 @@ export const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/products/:id" element={<Product />} />
           <Route path="/products/:id/info" element={<Info />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>

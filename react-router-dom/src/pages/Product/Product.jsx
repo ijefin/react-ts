@@ -22,7 +22,9 @@ export const Product = () => {
           <h2>{price} R$</h2>
         </>
       )}
-      <Link to={`/products/${product.id}/info`}>Info</Link>
+      <div style={{ textAlign: "center" }}>
+        <Link to={`/products/${product.id}/info`}>Info</Link>
+      </div>
       {error && <p>Ocorreu um erro</p>}
     </div>
   );
