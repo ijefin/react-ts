@@ -18,7 +18,7 @@ export const Home = () => {
           <li key={prod.id}>
             <h2>{prod.name}</h2>
             <h2>{prod.price} R$</h2>
-            <Link to={`/product/${prod.id}`}>Detalhes</Link>
+            <Link to={`/products/${prod.id}`}>Detalhes</Link>
           </li>
         ))}
       </ul>

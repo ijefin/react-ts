@@ -1,4 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@600&family=Hind&family=Raleway:wght@800&family=Signika+Negative:wght@500&display=swap");
+
 body {
   color: #fff;
   background-color: rgba(18, 23, 66, 0.89);
+  font-family: "Dosis", sans-serif;
+  font-family: "Hind", sans-serif;
+  font-family: "Raleway", sans-serif;
+  font-family: "Signika Negative", sans-serif;
 }
