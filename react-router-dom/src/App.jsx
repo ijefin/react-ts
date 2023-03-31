@@ -6,6 +6,8 @@ import { Navbar } from "./componentes/Navbar/Navbar";
 import { Product } from "./pages/Product/Product";
 import { Info } from "./pages/Info/Info";
 import { NotFound } from "./pages/404/NotFound";
+import { Search } from "./componentes/Search/Search";
+import { SearchPage } from "./pages/SearchPage/SearchPage";
 
 export const App = () => {
   return (
@@ -13,12 +15,14 @@ export const App = () => {
       <h1 style={{ textAlign: "center" }}>React Router</h1>
       <BrowserRouter>
         <Navbar />
+        <Search />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/products/:id" element={<Product />} />
           <Route path="/products/:id/info" element={<Info />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/search" element={<SearchPage />} />
         </Routes>
       </BrowserRouter>
     </div>
