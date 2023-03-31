@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Home } from "./pages/Home/Home";
 import { About } from "./pages/About/About";
 import { Navbar } from "./componentes/Navbar/Navbar";
@@ -23,6 +23,7 @@ export const App = () => {
           <Route path="/products/:id/info" element={<Info />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/search" element={<SearchPage />} />
+          <Route path="/company" element={<Navigate to="/about" />} />
         </Routes>
       </BrowserRouter>
     </div>
