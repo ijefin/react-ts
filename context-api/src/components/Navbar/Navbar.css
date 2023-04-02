@@ -2,8 +2,21 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #dc6001;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
   margin: 20px;
+}
+
+.active {
+  background-color: #000;
+  color: #fff;
+}
+
+.pending {
+  background-color: #606060;
+  color: #fff;
 }
